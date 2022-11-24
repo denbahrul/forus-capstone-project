@@ -1,5 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background-color: #EDEDED;
+  }
+
+  .app-container {
+    padding: 20px;
+  }
+
+  .post {
+    display: flex;
+    background-color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: box-shadow .3s;
+  }
+  .post:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+  }
+  .post-avatar {
+    background-color: #828282;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .post-item {
+    width: 90%;
+  }
+
+  .post p {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  .post h2 {
+    margin-left: 20px;
+  }
+
+  .tanggal {
+    color: #828282;
+  }
+
+  .kategori {
+    border: 1px;
+    border-style: solid;
+    border-color: #E231FF;
+    border-radius: 5px;
+    color: #E231FF;
+    padding: 3px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
