@@ -1,5 +1,57 @@
-* {
-    padding: 0;
+@media screen and (min-width: 480px) {
+  body {
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
   }
+}
+.check-label {
+  padding-left: 1px;
+}
+
+form {
+  height: 80vh;
+  width: 25%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 10px;
+  padding: 6px;
+}
+
+h1 {
+  text-align: center;
+  color: #e79f33;
+}
+
+h2 {
+  text-align: center;
+}
+
+.box-sub-text {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 6px;
+  background-color: #263571;
+  border-radius: 25px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  color: white;
+}
+
+button:last-child {
+  background-color: white;
+  color: #263571;
+}
+
+input {
+  margin-bottom: 1rem;
+}
