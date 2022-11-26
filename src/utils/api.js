@@ -1,5 +1,14 @@
 const BASE_URL = "https://63660b33046eddf1baf77f68.mockapi.io/api/v1";
 
+async function addUser(user) {
+  return fetch(`${BASE_URL}/user`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  }).then((response) => response.json());
+}
 
 async function addArgument({ title, argument, instansi, sumber, kategori }) {
     const response = await fetch(`${BASE_URL}/user/1/post`, {
@@ -19,4 +28,4 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return { error: false, data: responseJson.data };
   }
 
-export { addArgument };
+export { addArgument, addUser };
