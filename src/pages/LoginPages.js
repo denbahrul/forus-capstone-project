@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./styles/main.css";
+import "../styles/login.css";
+import getUser from "../utils/api";
 
-function App() {
+function LoginPages() {
   const [listUser, setListUser] = useState([]);
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
 
-  const getData = () => {
-    fetch("https://63660b33046eddf1baf77f68.mockapi.io/api/v1/user")
-      .then((res) => res.json())
-      .then((data) => setListUser(data));
-  };
-
   useEffect(() => {
-    getData();
+    getUser().then((data) => setListUser(data));
   }, []);
 
   const handleLogin = (e) => {
@@ -62,4 +57,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginPages;
