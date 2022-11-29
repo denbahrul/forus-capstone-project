@@ -10,6 +10,10 @@ async function addUser(user) {
   }).then((response) => response.json());
 }
 
+const getUser = () => {
+  return fetch("https://63660b33046eddf1baf77f68.mockapi.io/api/v1/user").then((res) => res.json());
+};
+
 async function addArgument({ title, argument, instansi, sumber, kategori }) {
     const response = await fetch(`${BASE_URL}/user/1/post`, {
       method: "POST",
@@ -28,4 +32,4 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return { error: false, data: responseJson.data };
   }
 
-export { addArgument, addUser };
+export { addArgument, addUser, getUser };
