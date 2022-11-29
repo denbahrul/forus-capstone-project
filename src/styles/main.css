@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .search-content{
+    box-shadow: 1px 1px 1px 2px #eee;
+    padding: 0px 0px 0px 0px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 0px;
+    display: none;
+  }
+  .search-content ul{
+    padding-left: unset;
+  }
+  .search-content ul li{
+    list-style: none;
+    padding: 0.7em;
+    cursor: pointer;
+  }
+  .search-content ul li:hover{
+    background: #eee
+  }
+  a{
+    text-decoration: none;
+    color: #000
+  }
