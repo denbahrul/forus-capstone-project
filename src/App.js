@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import SearchPages from "./pages/SearchPages";
+import API from "./utils/api";
+import appendData from "./utils/appendData";
 
 function App() {
   const [data, setData] = useState([]);
@@ -20,28 +23,23 @@ function App() {
           <li><a href="${newData[i].id}">${newData[i].title}</a></li>
         `;
       }
+
+      if(newData.length == 0){
+        content.innerHTML = `<center><small>Data tidak ditemukan<small></center>`
+      }else{
+        content.innerHTML = html;
+      }
       html += `</ul>`;
-      content.innerHTML = html;
       content.style.display = "block";
     }else{
       content.innerHTML = ``;
       content.style.display = "none";
     }
 
-    
   }
-  const appendData = (data) => {
-    let newData = [];
-    var i;
-    for (i = 0; i < data.length; i++) { 
-      for(let j = 0; j < data[i].post.length; j++){
-        newData.push(data[i].post[j])
-      }
-    }
-    return (newData)
-  }
+  
   useEffect(() => {
-    fetch(`https://63660b33046eddf1baf77f68.mockapi.io/api/v1/user`)
+    fetch(API.BASE_URL)
      .then((response) => response.json())
      .then((actualData) => 
       setData(appendData(actualData))
@@ -51,16 +49,12 @@ function App() {
      });
    }, []);
 
-   console.log(data)
   return (
     <div className="app-container">
      <div className="container">
        <div className="row justify-content-center">
         <div className="col-md-6">
-          <div>
-            <label>Search : </label>
-            <input type="text"  onChange={(e) => searchEventHandler(e.target.value)} className="form-control" placeholder="Coba cari disini ..." />
-          </div>
+          <SearchPages searchEventHandler={searchEventHandler} />
           <div className="search-content">
            
           </div>
