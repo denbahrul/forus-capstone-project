@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/add.css";
 
 class ArgumentInput extends React.Component {
   constructor(props) {
@@ -83,20 +84,44 @@ class ArgumentInput extends React.Component {
 
   render() {
     return (
-      <div className="note-input">
-        <h2>Buat Argument</h2>
-        <form onSubmit={this.onSubmitEventHandler}>
-          <input className="post" type="text" placeholder="Kategori" required value={this.state.kategori} onChange={this.onKategoriChangeEventHandler} /><br></br>
-          <p className="post__char-limit">Sisa karakter: {this.state.maxText}</p>
-          <input className="post" type="text" placeholder="Judul Arguman" required value={this.state.title} onChange={this.onTitleChangeEventHandler} /><br></br>
-          <textarea className="post-input__body" type="text" placeholder="Isi Argumen" required value={this.state.argument} onChange={this.onArgumentChangeEventHandler} /><br></br>
-          <input className="post" type="text" placeholder="Link Sumber" required value={this.state.sumber} onChange={this.onSumberChangeEventHandler} /><br></br>
-          <input className="post" type="text" placeholder="Instansi Tujuan" required value={this.state.instansi} onChange={this.onInstansiChangeEventHandler} /><br></br>
-          <input className="post" type="checkbox" checked={this.state.chcboxValue} onChange={this.onCheckboxChangeEventHandler}/>
-          <p>Argumen yang saya berikan benar adanya. Apabila informasi yang di sebarkan tidak sesuai, seperti hoaks ataupun ujaran kebencian, dapat mengakibatkan terkena pelanggaran, termasuk adanya pelanggaran UU ITE yang dapat mengakibatkan hukum pidana.</p><br></br>
-          <a href="/">Batal</a>
-          <button type="submit" disabled={this.state.chcboxValue ? false : true}>Kirim</button>
-        </form>
+      <div className="input-container">
+        <div className="note-input">
+          <div className="profile-item__image">
+            <img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/671.jpg" alt="profil avatar"/>
+          </div>
+          <form className="form-add__argument" onSubmit={this.onSubmitEventHandler}>
+            <div className="form-category">
+              <p>Kategori :</p>
+              <select className="category-list" type="text" placeholder="Kategori" required value={this.state.kategori} onChange={this.onKategoriChangeEventHandler}>
+                <option value='Ekonomi'>Ekonomi</option>
+                <option value='Teknologi'>Teknologi</option>
+                <option value='Pemerintahan'>Pemerintahan</option>
+                <option value='Sosial'>Sosial</option>
+                <option value='Undang-undang'>Undang-undang</option>
+              </select>
+            </div>
+            <div>
+              <p className="post__char-limit">Sisa karakter: {this.state.maxText}</p>
+              <input className="post-input__title" type="text" placeholder="Judul Arguman" required value={this.state.title} onChange={this.onTitleChangeEventHandler} />
+            </div>
+            <textarea className="post-input__body" type="text" placeholder="Isi Argumen" required value={this.state.argument} onChange={this.onArgumentChangeEventHandler} />
+            <div>
+              <input className="post-input__source" type="link" placeholder="Link Sumber" value={this.state.sumber} onChange={this.onSumberChangeEventHandler} />
+              <p className="source-desc">*Sertakan sumber untuk memperkuat argumen Anda (opsional)</p>
+            </div>
+            <input className="post" type="text" placeholder="Instansi Tujuan" required value={this.state.instansi} onChange={this.onInstansiChangeEventHandler} />
+            <div className="post-checkbox">
+              <input className="checkbox" type="checkbox" checked={this.state.chcboxValue} onChange={this.onCheckboxChangeEventHandler}/>
+              <p className="check-label__post">Argumen yang saya berikan benar adanya. Apabila informasi yang di sebarkan tidak sesuai, seperti hoaks ataupun ujaran kebencian, dapat mengakibatkan terkena pelanggaran, termasuk adanya pelanggaran UU ITE yang dapat mengakibatkan hukum pidana.</p>
+            </div>
+            <div>
+              <div className="post-button">
+                <a className="cancel-button" href="/">Batal</a>
+                <button className={this.state.chcboxValue ? "submit-button" : "submit-button__false"} type="submit" disabled={this.state.chcboxValue ? false : true}>Kirim</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
