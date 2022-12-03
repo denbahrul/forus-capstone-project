@@ -4,9 +4,10 @@
     padding: 10px;
 }
 
-.note-input {
+.argument-input {
     background-color: var(--on-background);
     border-radius: 10px;
+    margin-top: 10px;
     padding: 30px;
     display: grid;
     grid-template-columns: 1fr 20fr;
@@ -131,7 +132,7 @@
     color: var(--on-background);
     border-radius: 10px;
     border: none;
-    cursor: pointer;
+    cursor:no-drop;
     font-family: poppins, sans-serif;
     font-size: medium;
 }

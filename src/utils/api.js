@@ -15,7 +15,7 @@ const getUser = () => {
 };
 
 async function addArgument({ title, argument, instansi, sumber, kategori }) {
-    const response = await fetch(`${BASE_URL}/user/1/post`, {
+    const response = await fetch(`${BASE_URL}/post`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,4 +32,44 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return { error: false, data: responseJson.data };
   }
 
-export { addArgument, addUser, getUser };
+  async function getDetailArgument() {
+    const response = await fetch(`${BASE_URL}/post/1`);
+    const responseJson = await response.json();
+    if (responseJson.error) {
+      console.log(responseJson.message);
+    } else {
+      console.log(responseJson);
+    }
+    return responseJson;
+  }
+
+  async function addComment({ komentar, sumber }) {
+    const response = await fetch(`${BASE_URL}/post/1/comment`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ komentar, sumber }),
+    });
+  
+    const responseJson = await response.json();
+  
+    if (responseJson.status !== "success") {
+      return { error: true, data: null };
+    }
+  
+    return { error: false, data: responseJson.data };
+  }
+
+  async function getComment() {
+    const response = await fetch(`${BASE_URL}/post/1/comment`);
+    const responseJson = await response.json();
+    if (responseJson.error) {
+      console.log(responseJson.message);
+    } else {
+      console.log(responseJson);
+    }
+    return responseJson;
+  }
+
+export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment };

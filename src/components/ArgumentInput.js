@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/add.css";
+import Swal from "sweetalert2";
 
 class ArgumentInput extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class ArgumentInput extends React.Component {
       instansi: "",
       kategori: "",
       chcboxValue: false,
-      maxText: 50,
+      maxText: 100,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -25,7 +25,7 @@ class ArgumentInput extends React.Component {
   }
 
   onTitleChangeEventHandler(event) {
-    const maxChar = 50;
+    const maxChar = 100;
     const titleInput = event.target.value.slice(0, maxChar);
     const titleInputLength = titleInput.length;
 
@@ -80,12 +80,13 @@ class ArgumentInput extends React.Component {
   onSubmitEventHandler(event) {
     event.preventDefault();
     this.props.addArgument(this.state);
+    Swal.fire({icon: 'success', title:'Argumen Anda berhasil diunggah', showConfirmButton: false, timer: 1500 });
   }
 
   render() {
     return (
       <div className="input-container">
-        <div className="note-input">
+        <div className="argument-input">
           <div className="profile-item__image">
             <img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/671.jpg" alt="profil avatar"/>
           </div>

@@ -1,0 +1,12 @@
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.argument-detail {
+    background-color: var(--on-background);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 30px;
+}
