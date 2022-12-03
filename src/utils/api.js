@@ -33,7 +33,7 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
   }
 
   async function getDetailArgument() {
-    const response = await fetch(`${BASE_URL}/post/1`);
+    const response = await fetch(`${BASE_URL}/post/27`);
     const responseJson = await response.json();
     if (responseJson.error) {
       console.log(responseJson.message);
@@ -44,7 +44,7 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
   }
 
   async function addComment({ komentar, sumber }) {
-    const response = await fetch(`${BASE_URL}/post/1/comment`, {
+    const response = await fetch(`${BASE_URL}/post/27/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
   }
 
   async function getComment() {
-    const response = await fetch(`${BASE_URL}/post/1/comment`);
+    const response = await fetch(`${BASE_URL}/post/27/comment`);
     const responseJson = await response.json();
     if (responseJson.error) {
       console.log(responseJson.message);

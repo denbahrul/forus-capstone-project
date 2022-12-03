@@ -39,12 +39,12 @@ class CommentInput extends React.Component {
 
     render() {
         return (
-            <form className="form-add__argument" onSubmit={this.onSubmitEventHandler}>
-                <textarea className="post-input__body" type="text" placeholder="Komentar" required value={this.state.komentar} onChange={this.onKomentarChangeEventHandler} />
+            <form className="form-add__comment" onSubmit={this.onSubmitEventHandler}>
+                <textarea className="comment-input__body" type="text" placeholder="Tanggapan Anda.." required value={this.state.komentar} onChange={this.onKomentarChangeEventHandler} />
                 <div>
-                    <input className="post-input__source" type="text" placeholder="Link Sumber" value={this.state.sumber} onChange={this.onSumberChangeEventHandler} />
+                    <input className="comment-input__source" type="text" placeholder="Link Sumber" value={this.state.sumber} onChange={this.onSumberChangeEventHandler} />
                     <p className="source-desc">*Sertakan sumber untuk memperkuat argumen Anda (opsional)</p>
-                    <button className="submit-button" type="submit">Kirim</button>
+                    <button className="comment-button" type="submit">Kirim</button>
                 </div>
             </form>
         );

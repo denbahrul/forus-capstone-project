@@ -94,6 +94,7 @@ class ArgumentInput extends React.Component {
             <div className="form-category">
               <p>Kategori :</p>
               <select className="category-list" type="text" placeholder="Kategori" required value={this.state.kategori} onChange={this.onKategoriChangeEventHandler}>
+              <option value=''>Pilih</option>
                 <option value='Ekonomi'>Ekonomi</option>
                 <option value='Teknologi'>Teknologi</option>
                 <option value='Pemerintahan'>Pemerintahan</option>

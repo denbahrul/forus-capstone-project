@@ -8,5 +8,129 @@
     background-color: var(--on-background);
     border-radius: 10px;
     margin-top: 10px;
-    padding: 30px;
+    padding:40px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.detail-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 30px;
+    margin-bottom: 10px;
+}
+
+.detail-date {
+    color:var(--date);
+}
+
+.detail-kategori__instansi {
+    display: flex;
+}
+
+.detail-kategori {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: medium;
+    background-color: rgba(255, 201, 130, 0.24);
+}
+
+.detail-instansi {
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    padding: 0 20px;
+    margin-left: 10px;
+    font-size: medium;
+    background-color: rgba(71, 144, 255, 0.24);
+}
+
+.detail-argument {
+    margin: 20px 0;
+}
+
+.detail-sumber  a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+.detail-sumber  a:hover {
+    text-decoration:underline;
+}
+
+.form-add__comment {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    border: 1px solid var(--form);
+    padding: 10px;
+    margin: 0 30px;
+}
+
+.comment-input__body {
+    border-radius: 10px;
+    height: 150px;
+    padding: 10px 20px;
+    background-color: var(--form);
+    border: none;
+    font-family: poppins, sans-serif;
+    font-size: medium;
+}
+
+.comment-input__source {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: var(--form);
+    border: none;
+    font-family: poppins, sans-serif;
+    font-size: medium;
+}
+
+.comment-button {
+    background-color: var(--primary);
+    margin-left: 10px ;
+    padding: 8px 45px;
+    color: var(--on-background);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: poppins, sans-serif;
+    font-size: medium;
+    float: right;
+}
+
+.comment-item {
+    padding: 20px 30px;
+    border-top: 1px solid var(--form);
+}
+
+.comment-name {
+    padding: 5px 0;
+}
+
+.comment-name i {
+    color: var(--date);
+}
+
+.comment-body {
+    padding: 5px 0;
+}
+
+.comment-source {
+    padding: 5px 0;
+}
+
+.comment-source a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+.comment-source a:hover {
+    text-decoration:underline;
 }

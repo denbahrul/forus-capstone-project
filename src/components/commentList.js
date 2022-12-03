@@ -5,10 +5,10 @@ function CommentList({ comment })  {
     return (
         <div>
         {comment.map((comment) => (
-            <div key={comment.id}>
-                <p>{comment.name}-{showFormattedDate(comment.createdAt)}</p>
-                <p>{comment.komentar}</p>
-                <a href={comment.sumber}>{comment.sumber}</a>
+            <div className="comment-item" key={comment.id}>
+                <p className="comment-name"><strong>{comment.name}</strong> • <i>{showFormattedDate(comment.createdAt)}</i></p>
+                <p className="comment-body">{comment.komentar}</p>
+                <p className="comment-source">-sumber : <a href={comment.sumber}>{comment.sumber}</a></p>
             </div>
         ))}
     </div>

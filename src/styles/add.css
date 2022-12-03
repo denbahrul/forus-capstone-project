@@ -7,6 +7,7 @@
 .argument-input {
     background-color: var(--on-background);
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 10px;
     padding: 30px;
     display: grid;
