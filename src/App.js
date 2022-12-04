@@ -8,7 +8,7 @@ import SearchLoading from "./pages/SearchLoading";
 import API from "./utils/api";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(['empty']);
   const [keyword, setKeyword] = useState('');
   const [categoriesSearch, setCategoriesSearch] = useState('search');
   const [isLoading, setIsLoading] = useState(false);
