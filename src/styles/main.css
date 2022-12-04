@@ -1,49 +1,55 @@
+body {
+  background: #eee;
+}
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  .search-content{
-    box-shadow: 1px 1px 1px 2px #eee;
-    padding: 0px 0px 0px 0px;
-    border-radius: 10px;
-    position: relative;
-    margin-top: 0px;
-    display: none;
-  }
-  .search-content ul{
-    padding-left: unset;
-  }
-  .search-content ul li{
-    list-style: none;
-    padding: 0.7em;
-    cursor: pointer;
-  }
-  .search-content ul li a{
-    padding-left: 0.5em;
-  }
-  .search-content ul > li:first-child{
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background: #eee
-  }
-  .search-content ul > li:first-child a{
-    border-left: 2px solid #0994c7;
-  }
-  .search-content ul > li:last-child{
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  .search-content ul li:hover{
-    background: #eee
-  }
-  a{
-    text-decoration: none;
-    color: #000
-  }
-  small{
-    display: block;
-    padding: 10px;
-    font-size: 11px;
-    color: #9e9e9e;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.search-content {
+  box-shadow: 1px 1px 1px 2px #eee;
+  padding: 0px 0px 0px 0px;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 0px;
+  display: none;
+}
+.search-content ul {
+  padding-left: unset;
+}
+.search-content ul li {
+  list-style: none;
+  padding: 0.7em;
+  cursor: pointer;
+}
+.search-content ul li a {
+  padding-left: 0.5em;
+}
+.search-content ul > li:first-child {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: #eee;
+}
+.search-content ul > li:first-child a {
+  border-left: 2px solid #0994c7;
+}
+.search-content ul > li:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.search-content ul li:hover {
+  background: #eee;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+small {
+  display: block;
+  padding: 10px;
+  font-size: 11px;
+  color: #9e9e9e;
+}
+.content-title {
+  text-transform: capitalize;
+}
