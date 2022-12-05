@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../styles/login.css";
 import { getUser } from "../utils/api";
 
 function LoginPage() {
