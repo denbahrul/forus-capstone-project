@@ -77,3 +77,16 @@ small {
   border-bottom-color: #f90;
   animation: spinner 0.8s linear infinite;
 }
+.img-user {
+  padding: 5px;
+  background: #def9ff;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.icon-footer {
+  display: -webkit-inline-box;
+}
+.icon-footer img {
+  width: 20px;
+}
