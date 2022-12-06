@@ -1,64 +1,54 @@
-import React, { useEffect, useState } from "react";
-import "./styles/main.css";
+import { useState, useEffect } from "react";
+import React from "react";
+import SearchPages from "./pages/SearchPages";
+import SearchCategories from "./pages/SearchCategories";
+import SearchOutput from "./pages/SearchOutput";
+import SearchLoading from "./pages/SearchLoading";
+
+import API from "./utils/api";
 
 function App() {
-  const [listUser, setListUser] = useState([]);
-  const [input, setInput] = useState({
-    email: "",
-    password: "",
-  });
+  const [data, setData] = useState(['empty']);
+  const [keyword, setKeyword] = useState('');
+  const [categoriesSearch, setCategoriesSearch] = useState('search');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const getData = () => {
-    fetch("https://63660b33046eddf1baf77f68.mockapi.io/api/v1/user")
-      .then((res) => res.json())
-      .then((data) => setListUser(data));
-  };
+  const storeData = (val) => {
+      setData(val);
+      setIsLoading(false);
+  }
+  const searchEventHandler = (e) => {
+      setIsLoading(true);
+      e.preventDefault();
+        fetch(API.BASE_URL + "?" + categoriesSearch + "=" + keyword)
+        .then((response) => response.json())
+        .then((actualData) => 
+          storeData(actualData)
+        )
+        .catch((err) => {
+          console.log(err.message);
+          setIsLoading(false);
+        });
+  }
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    for (let x of listUser) {
-      if (x.email === input.email && x.password === input.password) {
-        return alert("Login Succes");
-      } else if (listUser.indexOf(x) === listUser.length - 1) {
-        return alert("Login Gagal!");
-      }
-    }
-  };
-
-  console.log(input);
+  const searchCategoriesEvent = (el)=>{
+    setCategoriesSearch(el.target.value);
+  }
 
   return (
-    <div>
-      <form className="formLogin" onSubmit={handleLogin}>
-        <div>
-          <h1>ForUs</h1>
-          <h2>Sign In</h2>
+    <div className="app-container">
+     <div className="container">
+       <div className="row justify-content-center">
+        <div className="col-md-6">
+          <SearchPages searchEventHandler={searchEventHandler} setKeyword={setKeyword}  />
+          <SearchCategories searchCategoriesEvent={searchCategoriesEvent} />
+          {isLoading ? <SearchLoading /> :  
+            <SearchOutput output={data} />
+          }
+          </div>
         </div>
-
-        <label>Email</label>
-        <input type="email" className="form-control" placeholder="Masukan email anda" required name="email" onChange={(e) => setInput({ ...input, email: e.target.value })} />
-        <label>Password</label>
-        <input type="password" className="form-control" placeholder="Masukan email anda" required name="password" onChange={(e) => setInput({ ...input, password: e.target.value })} />
-
-        <div className="check-label">
-          <input type="checkbox" className="check-label" id="exampleCheck1" />
-          <label className="check-label" for="exampleCheck1">
-            Remember Me
-          </label>
-        </div>
-        <div>
-          <span>Forget Password?</span>
-        </div>
-        <button className="button" type="submit">
-          Login
-        </button>
-        <button>Register</button>
-      </form>
-    </div>
+       </div>
+     </div>
   );
 }
 
