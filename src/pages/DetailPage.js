@@ -2,19 +2,27 @@ import React from "react";
 import ArgumentDetail from "../components/ArgumentDetail";
 import CommentInput from "../components/CommentInput";
 import CommentList from "../components/commentList";
-import { addComment, getComment, getDetailArgument } from "../utils/api";
+import { addComment, getPost } from "../utils/api";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Loader from "../components/loader";
 
 function DetailPage() {
-    const [argument, setArgument] = React.useState([]);
-    const [comment, setComment] = React.useState([]);
-  
-    React.useEffect(() => {
-        getDetailArgument().then((data) => setArgument(data));
-    }, []);
+    const {id} = useParams();
+    const [initializing, setInitializing] = useState(true);
+    const [post, setPost] = useState(null);
 
-    React.useEffect(() => {
-        getComment().then((data) =>  setComment(data));
-    }, []);
+    useEffect(() => {
+        getPost(id)
+        .then(({data}) => {
+            setPost(data);
+            setInitializing(false);
+        })
+    }, [id]);
+
+    if (initializing) {
+        return <Loader />
+    }
 
     async function onAddCommentHandler(comment) {
         await addComment(comment);
@@ -23,9 +31,9 @@ function DetailPage() {
     return(
         <div className="detail-container">
             <div className="argument-detail">
-                <ArgumentDetail {...argument}/>
+                <ArgumentDetail {...post}/>
                 <CommentInput addComment={onAddCommentHandler}/>
-                <CommentList comment={comment}/>
+                <CommentList comment={post.comment}/>
             </div>
         </div>
     );

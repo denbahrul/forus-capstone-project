@@ -1,5 +1,6 @@
 import React from "react";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
 
 class CommentInput extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class CommentInput extends React.Component {
         this.state = {
             komentar: "",
             sumber: "",
+            
         };
 
         this.onKomentarChangeEventHandler = this.onKomentarChangeEventHandler.bind(this);
