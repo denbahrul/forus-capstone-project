@@ -22,9 +22,22 @@
 
   body {
     font-family: Poppins, sans-serif;
+    background-color: #EDEDED;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
 
-.app-container {
-  background-color: var(--on-background-grey);
-  min-height: 100vh
-}
+  body::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  main {
+    width: 50%;
+    top: 80px;
+  }
+
+  a:visited, a:link, a:active
+  {
+    color: black;
+    text-decoration: none;
+  }

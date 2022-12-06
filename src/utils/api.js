@@ -72,4 +72,24 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return responseJson;
   }
 
-export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment };
+  async function getAllPost(){
+    const response = await fetch(`${BASE_URL}/post?sortBy=createdAt&order=desc`);
+    const responseJson = await response.json();
+
+    return {data: responseJson}
+  }
+
+  async function getPost(id) {
+    const response = await fetch(`${BASE_URL}/post/${id}`);
+    const responseJson = await response.json();
+
+    console.log(responseJson);
+
+    if (responseJson.id !== `${id}` ) {
+        return { data: null };
+      }
+
+    return {data: responseJson}
+  }
+
+export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost };
