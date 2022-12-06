@@ -1,8 +1,11 @@
 import React from "react";
 import { showFormattedDate } from "../utils";
+import {AiOutlineUpCircle, AiOutlineDownCircle} from "react-icons/ai";
+import {FaRegComments} from "react-icons/fa";
 
-function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name}) {
+function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name, upVote, downVote}) {
     return (
+        <>
         <div className="detail-main">
             <h2>{title}</h2>
             <p className="detail-date">{name} • <i>{showFormattedDate(createdAt)}</i></p>
@@ -13,6 +16,21 @@ function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instans
             <p className="detail-argument">{argument}</p>
             <p className="detail-sumber">-sumber : <a href={sumber}>{sumber}</a></p>
         </div>
+        <div className="reaction-bar">
+            <div className="reaction-bar__vote">
+                <AiOutlineUpCircle size={24} />
+                <p>{upVote} Setuju</p>
+            </div>
+            <div className="reaction-bar__vote">
+                <AiOutlineDownCircle size={24} />
+                <p>{downVote} Tidak setuju</p>
+            </div>
+            <div className="reaction-bar__comments">
+                <FaRegComments size={24} />
+                <p>Komentar</p>
+            </div>
+        </div>
+              </>
     );
 }
 
