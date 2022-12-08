@@ -32,8 +32,10 @@
   }
 
   main {
-    width: 50%;
+    width: 100%;
     top: 80px;
+    margin: 0 10px;
+    margin-bottom: 50px;
   }
 
   a:visited, a:link, a:active

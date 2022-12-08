@@ -9,7 +9,7 @@ import {FaRegComments} from "react-icons/fa";
 function PostItem({id, title, name, createdAt, kategori, argument, instansi, upVote, downVote}) {
     return (
         <div className="post">
-          <div className="post-avatar"></div>
+          {/* <div className="post-avatar"></div> */}
           <div className="post-item">
           <Link to={`/argument/${id}`}><h2>{title}</h2></Link>
           <p className="tanggal">{name} • <i>{showFormattedDate(createdAt)}</i></p>

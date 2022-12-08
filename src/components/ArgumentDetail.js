@@ -15,8 +15,7 @@ function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instans
             </div>
             <p className="detail-argument">{argument}</p>
             <p className="detail-sumber">-sumber : <a href={sumber}>{sumber}</a></p>
-        </div>
-        <div className="reaction-bar">
+            <div className="reaction-bar">
             <div className="reaction-bar__vote">
                 <AiOutlineUpCircle size={24} />
                 <p>{upVote} Setuju</p>
@@ -30,7 +29,8 @@ function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instans
                 <p>Komentar</p>
             </div>
         </div>
-              </>
+        </div>
+        </>
     );
 }
 

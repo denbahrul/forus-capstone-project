@@ -1,7 +1,7 @@
 .input-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .argument-input {
@@ -9,10 +9,10 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 10px;
-    padding: 30px;
-    display: grid;
+    padding: 20px;
+    /* display: grid;
     grid-template-columns: 1fr 20fr;
-    gap: 10px;
+    gap: 10px; */
 }
 
 .profile-item__image img {
@@ -161,4 +161,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.post-input__instansi {
+    width: 100%;
 }

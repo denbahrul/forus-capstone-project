@@ -1,5 +1,13 @@
 const BASE_URL = "https://63660b33046eddf1baf77f68.mockapi.io/api/v1";
 
+function getAccessToken() {
+  return localStorage.getItem("accessToken");
+}
+
+function putAccessToken(accessToken) {
+  return localStorage.setItem("accessToken", accessToken);
+}
+
 async function addUser(user) {
   return fetch(`${BASE_URL}/user`, {
     method: "POST",
@@ -92,4 +100,15 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return {data: responseJson}
   }
 
-export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost };
+  async function getUserLogged() {
+    const response = await fetch(`${BASE_URL}/user`);
+    const responseJson = await response.json();
+  
+    if (responseJson.status !== "success") {
+      return { error: true, data: null };
+    }
+  
+    return { error: false, data: responseJson.data };
+  }
+
+export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost, getAccessToken, putAccessToken, getUserLogged };

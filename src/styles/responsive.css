@@ -1,0 +1,36 @@
+@media (max-width: 599px) { @content; }
+
+@media (min-width: 600px) { 
+    .bottom-nav {
+        padding: 0 200px;
+    }
+ }
+
+@media (min-width: 900px) { 
+    .form-login {
+        width: 50%;
+    }
+    
+    .background-login-register, .sidebar {
+        display: block;
+    }
+
+    .bottom-nav {
+        display: none;
+    }
+
+    main {
+        width: 50%;
+        margin: 0;
+    }
+
+    .detail-container, .input-container {
+        padding: 10px 0;
+    }
+
+
+ }
+
+@media (min-width: 1200px) { @content; }
+
+@media (min-width: 1800px) { @content; }

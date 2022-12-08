@@ -1,14 +1,15 @@
 .post {
-    display: flex;
+    /* display: flex; */
     background-color: white;
-    max-width: 800px;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 1px;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     transition: box-shadow .3s;
+    width: 100%;
   }
+
   .post:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
@@ -30,12 +31,11 @@
   }
   
   .post-item {
-    width: 90%;
+    width: 100%;
     text-decoration: none;
   }
 
   .post p {
-    margin-left: 20px;
     margin-top: 10px;
   }
 
@@ -47,7 +47,6 @@
   }
 
   .post h2 {
-    margin-left: 20px;
     text-decoration: none;
   }
 
