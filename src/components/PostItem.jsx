@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import {AiOutlineUpCircle, AiOutlineDownCircle} from "react-icons/ai";
 import {FaRegComments} from "react-icons/fa";
 
-function PostItem({id, title, name, createdAt, kategori, argument, instansi, upVote, downVote}) {
+function PostItem({id, title, name, createdAt, kategori, argument, instansi, upVote, downVote, comment}) {
     return (
         <div className="post">
           <div className="post-avatar"></div>
@@ -29,7 +29,7 @@ function PostItem({id, title, name, createdAt, kategori, argument, instansi, upV
         </div>
         <div className="reaction-bar__comments">
             <FaRegComments size={24} />
-            <p>Komentar</p>
+            <p>{comment.length} Komentar</p>
         </div>
     </div>
           </div>

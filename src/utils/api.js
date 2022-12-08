@@ -43,8 +43,8 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return responseJson;
   }
 
-  async function addComment({ komentar, sumber }) {
-    const response = await fetch(`${BASE_URL}/post/27/comment`, {
+  async function addComment({id, komentar, sumber }) {
+    const response = await fetch(`${BASE_URL}/post/${id}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,8 +61,8 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return { error: false, data: responseJson.data };
   }
 
-  async function getComment() {
-    const response = await fetch(`${BASE_URL}/post/27/comment`);
+  async function getComment(id) {
+    const response = await fetch(`${BASE_URL}/post/${id}/comment`);
     const responseJson = await response.json();
     if (responseJson.error) {
       console.log(responseJson.message);
@@ -82,8 +82,6 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
   async function getPost(id) {
     const response = await fetch(`${BASE_URL}/post/${id}`);
     const responseJson = await response.json();
-
-    console.log(responseJson);
 
     if (responseJson.id !== `${id}` ) {
         return { data: null };

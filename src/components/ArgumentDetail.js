@@ -3,7 +3,7 @@ import { showFormattedDate } from "../utils";
 import {AiOutlineUpCircle, AiOutlineDownCircle} from "react-icons/ai";
 import {FaRegComments} from "react-icons/fa";
 
-function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name, upVote, downVote}) {
+function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name, upVote, downVote, comment}) {
     return (
         <>
         <div className="detail-main">
@@ -27,7 +27,7 @@ function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instans
             </div>
             <div className="reaction-bar__comments">
                 <FaRegComments size={24} />
-                <p>Komentar</p>
+                <p>{comment.length} Komentar</p>
             </div>
         </div>
               </>
