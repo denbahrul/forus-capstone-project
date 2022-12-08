@@ -1,37 +1,32 @@
-import React from "react";
-import { useState, useEffect } from 'react'
-import { getAllPost } from "../utils/api";
-import PostItem from "../components/PostItem";
-import Loader from "../components/loader";
-import AddButton from "../components/AddButton";
-// import ArgumentDetail from "../components/ArgumentDetail";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { getAllPost } from '../utils/api';
+import PostItem from '../components/PostItem';
+import Loader from '../components/Loader';
+import AddButton from '../components/AddButton';
 
 function HomePage() {
   const [initializing, setInitializing] = useState(true);
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    getAllPost()
-    .then(({data}) => {
+    getAllPost().then(({ data }) => {
       setPost(data);
-      setInitializing(false)
-    })
-  }, [])
+      setInitializing(false);
+    });
+  }, []);
 
   if (initializing) {
-    return <Loader />
-}
+    return <Loader />;
+  }
 
   return (
-      <>
+    <>
       <AddButton />
       {post.map((post) => {
-        return (
-          <PostItem key={post.id} {...post} />
-          // <ArgumentDetail key={post.id} {...post} />
-        )
+        return <PostItem key={post.id} {...post} />;
       })}
-      </>
+    </>
   );
 }
 
