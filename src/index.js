@@ -6,9 +6,6 @@ import App from "./components/App";
 import "./styles/main.css";
 import "./styles/add.css";
 import "./styles/detail.css";
-import "./styles/loader.css";
-import "./styles/post.css";
-import "./styles/navigation.css";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
