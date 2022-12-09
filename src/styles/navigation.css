@@ -53,6 +53,7 @@ nav {
     width: 46vw;
     font-size: 14px;
     color: var(--date);
+    font-family: poppins, sans-serif;
   }
   
   .search-bar input::placeholder {
@@ -97,7 +98,7 @@ nav {
   .search-button {
     background-color: var(--primary-variant);
     margin: 20px 10px ;
-    padding: 9px;
+    padding: 11px 18px;
     color: var(--on-background);
     border-radius: 10px;
     border: none;
@@ -107,17 +108,12 @@ nav {
   }
 
   .search-filter {
-    display: flex;
     background-color: white;
-    max-width: 800px;
-    margin: 20px auto;
     border: 1px;
     padding: 25px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transition: box-shadow .3s;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    text-align: center;
   }
 
   .form-check-label {
@@ -126,5 +122,12 @@ nav {
 
   .form-check-input {
     background-color: var(--primary-variant);
+  }
+
+  .search-filter__container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
