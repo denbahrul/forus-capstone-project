@@ -9,11 +9,11 @@ function RegisterPage() {
   function onAddUserHandler(user) {
     addUser(user);
     navigate("/login");
+    navigate(0);
   }
 
   return (
     <section>
-      <h2>Register</h2>
       <Register addUser={onAddUserHandler} />
     </section>
   );
