@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBarr";
 
 function Navbar() {
     return (
@@ -7,7 +7,6 @@ function Navbar() {
             <h1>ForUs</h1>
             <SearchBar />
             <div className="post-avatar"></div>
-            
         </nav>
     )
 }

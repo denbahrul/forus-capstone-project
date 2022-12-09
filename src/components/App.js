@@ -7,6 +7,7 @@ import HomePage from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
 import Navbar from "./Navbar";
 import {LeftBar, RightBar} from "./SideBar";
+import SearchPage from "../pages/SearchPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/addArgument" element={<AddPage />} />
           <Route path="/argument/:id" element={<DetailPage />} />
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
         </main>
         <RightBar />

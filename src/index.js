@@ -10,6 +10,7 @@ import "./styles/loader.css";
 import "./styles/post.css";
 import "./styles/navigation.css";
 
+
 const root = createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
