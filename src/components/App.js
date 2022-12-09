@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import AddPage from "../pages/addPage";
@@ -8,12 +8,41 @@ import DetailPage from "../pages/DetailPage";
 import Navbar from "./Navbar";
 import {LeftBar, RightBar} from "./SideBar";
 import SearchPage from "../pages/SearchPage";
-
+import {API} from "../utils/api";
 
 function App() {
+  const navigate = useNavigate();
+  const [data, setData] = useState(['empty']);
+  const [keyword, setKeyword] = useState('');
+  const [categoriesSearch, setCategoriesSearch] = useState('search');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const storeData = (val) => {
+      setData(val);
+      setIsLoading(false);
+  }
+  const searchEventHandler = (e) => {
+    navigate("/search");
+      setIsLoading(true);
+      e.preventDefault();
+        fetch(API.BASE_URL + "?" + categoriesSearch + "=" + keyword)
+        .then((response) => response.json())
+        .then((actualData) => 
+          storeData(actualData)
+        )
+        .catch((err) => {
+          console.log(err.message);
+          setIsLoading(false);
+        });
+  }
+
+  const searchCategoriesEvent = (el)=>{
+    setCategoriesSearch(el.target.value);
+  }
+
   return (
     <div className="app-container">
-      <Navbar />
+      <Navbar searchEventHandler={searchEventHandler} setKeyword={setKeyword}/>
       <div className="wrapper">
         <LeftBar />
         <main>
@@ -23,7 +52,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/addArgument" element={<AddPage />} />
           <Route path="/argument/:id" element={<DetailPage />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/search" element={<SearchPage searchCategoriesEvent={searchCategoriesEvent} isLoading={isLoading} data={data} />} />
         </Routes>
         </main>
         <RightBar />

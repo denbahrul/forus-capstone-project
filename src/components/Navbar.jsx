@@ -1,11 +1,11 @@
 import React from "react";
-import SearchBar from "./SearchBarr";
+import SearchBar from "./SearchBar";
 
-function Navbar() {
+function Navbar({searchEventHandler, setKeyword}) {
     return (
         <nav>
             <h1>ForUs</h1>
-            <SearchBar />
+            <SearchBar searchEventHandler={searchEventHandler} setKeyword={setKeyword}  />
             <div className="post-avatar"></div>
         </nav>
     )

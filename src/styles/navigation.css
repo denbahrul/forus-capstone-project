@@ -43,6 +43,7 @@ nav {
     margin-left: 10px;
     font-size: 20px;
 }
+
 .search-bar input {
     margin: 20px 0;
     background-color: var(--on-background-grey);
@@ -91,5 +92,39 @@ nav {
   .reaction-bar__comments p{
     margin: auto 5px;
     font-size: small;
+  }
+
+  .search-button {
+    background-color: var(--primary-variant);
+    margin: 20px 10px ;
+    padding: 9px;
+    color: var(--on-background);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: poppins, sans-serif;
+    font-size: 14px;
+  }
+
+  .search-filter {
+    display: flex;
+    background-color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: box-shadow .3s;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-check-label {
+    margin-left: 8px;
+  }
+
+  .form-check-input {
+    background-color: var(--primary-variant);
   }
 
