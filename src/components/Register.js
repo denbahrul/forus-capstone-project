@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -14,9 +16,9 @@ class Register extends React.Component {
     this.onNameChangeEventHandler = this.onNameChangeEventHandler.bind(this);
     this.onEmailChangeEventHandler = this.onEmailChangeEventHandler.bind(this);
     this.onPasswordChangeEventHandler =
-      this.onPasswordChangeEventHandler.bind(this);
+    this.onPasswordChangeEventHandler.bind(this);
     this.onPasswordConfirmationChangeEventHandler =
-      this.onPasswordConfirmationChangeEventHandler.bind(this);
+    this.onPasswordConfirmationChangeEventHandler.bind(this);
     this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
   }
 
@@ -64,7 +66,12 @@ class Register extends React.Component {
 
   render() {
     return (
-      <form className="register" onSubmit={this.onSubmitEventHandler}>
+      <>
+      <div className="login-register">
+      <div className="form-login">
+      <h1 className="for-us">ForUs.</h1>
+      <form onSubmit={this.onSubmitEventHandler}>
+      <h2>Register</h2>
         <input
           type="text"
           placeholder="Nama"
@@ -89,8 +96,16 @@ class Register extends React.Component {
           value={this.state.passwordConfirmation}
           onChange={this.onPasswordConfirmationChangeEventHandler}
         />
-        <button type="submit">Daftar</button>
+        <button className="button-submit" type="submit">Daftar</button>
+        <p>Sudah punya akun? <Link to="/login"><b>Masuk.</b></Link> </p>
       </form>
+      </div>
+      <div className="background-login-register">
+      <img src="./ilustrasi.png" alt="ilustrasi diskusi"></img>
+        <h2>Sampaikan aspirasi-mu disini!</h2>
+      </div>
+      </div>
+      </>
     );
   }
 }

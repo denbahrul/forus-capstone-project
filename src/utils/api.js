@@ -11,7 +11,8 @@ async function addUser(user) {
 }
 
 const getUser = () => {
-  return fetch("https://63660b33046eddf1baf77f68.mockapi.io/api/v1/user").then((res) => res.json());
+  return fetch(`${BASE_URL}/user`)
+  .then((res) => res.json());
 };
 
 async function addArgument({ title, argument, instansi, sumber, kategori }) {
@@ -72,4 +73,24 @@ async function addArgument({ title, argument, instansi, sumber, kategori }) {
     return responseJson;
   }
 
-export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment };
+  async function getAllPost(){
+    const response = await fetch(`${BASE_URL}/post?sortBy=createdAt&order=desc`);
+    const responseJson = await response.json();
+
+    return {data: responseJson}
+  }
+
+  async function getPost(id) {
+    const response = await fetch(`${BASE_URL}/post/${id}`);
+    const responseJson = await response.json();
+
+    console.log(responseJson);
+
+    if (responseJson.id !== `${id}` ) {
+        return { data: null };
+      }
+
+    return {data: responseJson}
+  }
+
+export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost, };

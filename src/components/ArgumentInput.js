@@ -87,9 +87,9 @@ class ArgumentInput extends React.Component {
     return (
       <div className="input-container">
         <div className="argument-input">
-          <div className="profile-item__image">
+          {/* <div className="profile-item__image">
             <img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/671.jpg" alt="profil avatar"/>
-          </div>
+          </div> */}
           <form className="form-add__argument" onSubmit={this.onSubmitEventHandler}>
             <div className="form-category">
               <p>Kategori :</p>
@@ -111,14 +111,14 @@ class ArgumentInput extends React.Component {
               <input className="post-input__source" type="link" placeholder="Link Sumber" value={this.state.sumber} onChange={this.onSumberChangeEventHandler} />
               <p className="source-desc">*Sertakan sumber untuk memperkuat argumen Anda (opsional)</p>
             </div>
-            <input className="post" type="text" placeholder="Instansi Tujuan" required value={this.state.instansi} onChange={this.onInstansiChangeEventHandler} />
+            <input className="post-input__source" type="text" placeholder="Instansi Tujuan" required value={this.state.instansi} onChange={this.onInstansiChangeEventHandler} />
             <div className="post-checkbox">
               <input className="checkbox" type="checkbox" checked={this.state.chcboxValue} onChange={this.onCheckboxChangeEventHandler}/>
               <p className="check-label__post">Argumen yang saya berikan benar adanya. Apabila informasi yang di sebarkan tidak sesuai, seperti hoaks ataupun ujaran kebencian, dapat mengakibatkan terkena pelanggaran, termasuk adanya pelanggaran UU ITE yang dapat mengakibatkan hukum pidana.</p>
             </div>
             <div>
               <div className="post-button">
-                <a className="cancel-button" href="/">Batal</a>
+                <a className="cancel-button" href="/home">Batal</a>
                 <button className={this.state.chcboxValue ? "submit-button" : "submit-button__false"} type="submit" disabled={this.state.chcboxValue ? false : true}>Kirim</button>
               </div>
             </div>
