@@ -23,9 +23,10 @@ function LoginPage() {
         localStorage.setItem('id', x.id);
         navigate("/home");
         navigate(0);
+        return alert("Login berhasil! Tekan OK untuk melanjutkan");
 
-      } else if (listUser.indexOf(x) === listUser.length - 1) {
-        return alert("Login Gagal!");
+      } else if(listUser.indexOf(x) === listUser.length - 1) {
+        return alert("Email atau password Salah");
       }
     }
   };
