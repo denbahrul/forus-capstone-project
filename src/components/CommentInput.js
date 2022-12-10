@@ -1,54 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
+import useInput from "../hooks/useinput";
+import { addComment } from "../utils/api";
 
-class CommentInput extends React.Component {
-    constructor(props) {
-        super(props);
+function CommentInput() {
+    const { id } = useParams();
+    const [komentar, onKomentarChange] = useInput("");
+    const [sumber, onSumberChange] = useInput("");
+    const [name] = useState(localStorage.getItem('name'));
+    const [userId] = useState(localStorage.getItem('id'));
 
-        this.state = {
-            komentar: "",
-            sumber: "",
-        };
-
-        this.onKomentarChangeEventHandler = this.onKomentarChangeEventHandler.bind(this);
-        this.onSumberChangeEventHandler = this.onSumberChangeEventHandler.bind(this);
-        this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
-    }
-
-    onKomentarChangeEventHandler(event) {
-        this.setState(() => {
-            return {
-                komentar: event.target.value,
-            };
-        });
-    }
-
-    onSumberChangeEventHandler(event) {
-        this.setState(() => {
-            return {
-                sumber: event.target.value,
-            };
-        });
-    }
-
-    onSubmitEventHandler(event) {
+    async function onSubmitHandler(event) {
         event.preventDefault();
-        this.props.addComment(this.state);
-        Swal.fire({icon: 'success', title:'Tanggapan ditambahkan', showConfirmButton: false, timer: 1500 });
+
+        const { error } = await addComment({
+            komentar: komentar,
+            sumber: sumber,
+            id: id,
+            userId: userId,
+            name: name,
+          });
+          Swal.fire({icon: 'success', title:'Tanggapan ditambahkan', showConfirmButton: false, timer: 1500 });
+          if (!error) {
+            Swal.fire({icon: 'error', title:'Tanggapan gagal', showConfirmButton: false, timer: 1500 });
+          }
     }
 
-    render() {
-        return (
-            <form className="form-add__comment" onSubmit={this.onSubmitEventHandler}>
-                <textarea className="comment-input__body" type="text" placeholder="Tanggapan Anda.." required value={this.state.komentar} onChange={this.onKomentarChangeEventHandler} />
+    return (
+            <form className="form-add__comment" onSubmit={onSubmitHandler}>
+                <textarea className="comment-input__body" type="text" placeholder="Tanggapan Anda.." required value={komentar} onChange={onKomentarChange} />
                 <div>
-                    <input className="comment-input__source" type="text" placeholder="Link Sumber" value={this.state.sumber} onChange={this.onSumberChangeEventHandler} />
+                    <input className="comment-input__source" type="text" placeholder="Link Sumber" value={sumber} onChange={onSumberChange} />
+                    <input type="text"  value={userId}/>
+                    <input type="text" value={name}/>
                     <p className="source-desc">*Sertakan sumber untuk memperkuat argumen Anda (opsional)</p>
                     <button className="comment-button" type="submit">Kirim</button>
                 </div>
             </form>
         );
     }
-}
+
 
 export default CommentInput;

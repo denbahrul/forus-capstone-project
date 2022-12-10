@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getUser } from "../utils/api";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [listUser, setListUser] = useState([]);
@@ -12,46 +14,56 @@ function LoginPage() {
     getUser().then((data) => setListUser(data));
   }, []);
 
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
     for (let x of listUser) {
       if (x.email === input.email && x.password === input.password) {
-        return alert("Login Succes");
-      } else if (listUser.indexOf(x) === listUser.length - 1) {
-        return alert("Login Gagal!");
+        localStorage.setItem('id', x.id);
+        localStorage.setItem('name', x.name);
+        navigate("/home");
+        navigate(0);
+        return alert("Login berhasil! Tekan OK untuk melanjutkan");
+
+      } else if(listUser.indexOf(x) === listUser.length - 1) {
+        return alert("Email atau password Salah");
       }
     }
   };
-
+  console.log(listUser);
   console.log(input);
 
   return (
-    <div>
-      <form className="formLogin" onSubmit={handleLogin}>
+    <div className="login-register">
+      <div className="form-login">
+        <h1 className="for-us">ForUs.</h1>
+      <form onSubmit={handleLogin}>
         <div>
-          <h1>ForUs</h1>
-          <h2>Sign In</h2>
+          <h2>Masuk </h2>
         </div>
 
         <label>Email</label>
         <input type="email" className="form-control" placeholder="Masukan email anda" required name="email" onChange={(e) => setInput({ ...input, email: e.target.value })} />
         <label>Password</label>
-        <input type="password" className="form-control" placeholder="Masukan email anda" required name="password" onChange={(e) => setInput({ ...input, password: e.target.value })} />
+        <input type="password" className="form-control" placeholder="Masukan password" required name="password" onChange={(e) => setInput({ ...input, password: e.target.value })} />
 
         <div className="check-label">
-          <input type="checkbox" className="check-label" id="exampleCheck1" />
-          <label className="check-label" for="exampleCheck1">
-            Remember Me
+          <input type="checkbox" className="checkmark" id="exampleCheck1" />
+          <label className="check-label" htmlFor="exampleCheck1">
+            Ingat Saya
           </label>
         </div>
-        <div>
-          <span>Forget Password?</span>
-        </div>
-        <button className="button" type="submit">
-          Login
+        <button className="button-submit" type="submit">
+          Masuk
         </button>
-        <button>Register</button>
+        <p>Belum punya akun? <Link to="/register"><b>Daftar.</b></Link> </p>
       </form>
+      </div>
+      <div className="background-login-register">
+        <img src="./ilustrasi.png" alt="ilustrasi diskusi"></img>
+        <h2>Sampaikan aspirasi-mu disini!</h2>
+      </div>
     </div>
   );
 }

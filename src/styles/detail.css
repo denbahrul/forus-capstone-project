@@ -1,14 +1,13 @@
 .detail-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px;
 }
 
 .argument-detail {
     background-color: var(--on-background);
     border-radius: 10px;
-    margin-top: 10px;
-    padding:40px 0;
+    margin: 10px 0;
+    padding: 20px 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: grid;
     grid-template-columns: 1fr;
@@ -19,7 +18,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 0 30px;
+    padding: 0 20px;
     margin-bottom: 10px;
 }
 
@@ -29,11 +28,12 @@
 
 .detail-kategori__instansi {
     display: flex;
+    align-items: center;
 }
 
 .detail-kategori {
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    color: var(--primary-variant);
+    border: 2px solid var(--primary-variant);
     border-radius: 10px;
     padding: 0 20px;
     font-size: medium;
@@ -93,7 +93,7 @@
 }
 
 .comment-button {
-    background-color: var(--primary);
+    background-color: var(--primary-variant);
     margin-left: 10px ;
     padding: 8px 45px;
     color: var(--on-background);

@@ -13,7 +13,6 @@ function RegisterPage() {
 
   return (
     <section>
-      <h2>Register</h2>
       <Register addUser={onAddUserHandler} />
     </section>
   );

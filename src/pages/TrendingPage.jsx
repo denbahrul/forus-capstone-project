@@ -1,16 +1,16 @@
 import React from "react";
 import { useState, useEffect } from 'react'
-import { getAllPost } from "../utils/api";
+import { getAllTrending } from "../utils/api";
 import PostItem from "../components/PostItem";
 import Loader from "../components/loader";
 import AddButton from "../components/AddButton";
 
-function HomePage() {
+function TrendingPage() {
   const [initializing, setInitializing] = useState(true);
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    getAllPost()
+    getAllTrending()
     .then(({data}) => {
       setPost(data);
       setInitializing(false)
@@ -23,7 +23,6 @@ function HomePage() {
 
   return (
       <>
-      <AddButton />
       {post.map((post) => {
         return (
           <PostItem key={post.id} {...post} />
@@ -33,4 +32,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default TrendingPage;
