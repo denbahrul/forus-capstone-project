@@ -21,6 +21,7 @@ function LoginPage() {
     for (let x of listUser) {
       if (x.email === input.email && x.password === input.password) {
         localStorage.setItem('id', x.id);
+        localStorage.setItem('name', x.name);
         navigate("/home");
         navigate(0);
         return alert("Login berhasil! Tekan OK untuk melanjutkan");

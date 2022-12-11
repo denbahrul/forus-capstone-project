@@ -13,6 +13,8 @@ class ArgumentInput extends React.Component {
       kategori: "",
       chcboxValue: false,
       maxText: 100,
+      userId: localStorage.getItem('id'),
+      name: localStorage.getItem('name'),
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -87,9 +89,6 @@ class ArgumentInput extends React.Component {
     return (
       <div className="input-container">
         <div className="argument-input">
-          {/* <div className="profile-item__image">
-            <img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/671.jpg" alt="profil avatar"/>
-          </div> */}
           <form className="form-add__argument" onSubmit={this.onSubmitEventHandler}>
             <div className="form-category">
               <p>Kategori :</p>

@@ -1,22 +1,37 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineFire, AiOutlineHome } from "react-icons/ai";
 import {BsBookmark} from 'react-icons/bs'
-
+import {FiLogOut} from 'react-icons/fi';
+import NewsItem from "./NewsItem";
+import {BiNews} from 'react-icons/bi'
 
 function RightBar() {
     return (
         <div className="sidebar">
             <div className="sidebar-item">
-                <p>Iklan</p>
+              <div className="sidebar-menu">
+                <BiNews size={28}/>
+                <p>Headline Indonesia</p>
+              </div>
+                <div className="news">
+                  <NewsItem />
+                </div>
             </div>
-            
         </div>
     )
 
 }
 
 function LeftBar() {
+  const navigate = useNavigate();
+  function logout() {  
+    localStorage.removeItem('id');
+    localStorage.removeItem('name');
+    navigate("/login")
+    navigate(0);
+  }
+
     return (
       <div className="sidebar">
         <div className="sidebar-item">
@@ -32,15 +47,14 @@ function LeftBar() {
               <p>Trending</p>
             </div>
           </Link>
-          <Link to="/saved">
-            <div className="sidebar-menu">
-              <BsBookmark size={28}/>
-              <p>Tersimpan</p>
-            </div>
-          </Link>
         </div>
         <div className="sidebar-item">
-          <p>uhuy2</p>
+          <div className="sidebar-menu">
+          <button className="button-logout" onClick={logout}>
+          <FiLogOut size={28} />
+            <p> Keluar</p>
+            </button>
+          </div>
         </div>
       </div>
     );

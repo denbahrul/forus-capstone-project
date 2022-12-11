@@ -32,8 +32,8 @@
 }
 
 .detail-kategori {
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    color: var(--primary-variant);
+    border: 2px solid var(--primary-variant);
     border-radius: 10px;
     padding: 0 20px;
     font-size: medium;
@@ -93,7 +93,7 @@
 }
 
 .comment-button {
-    background-color: var(--primary);
+    background-color: var(--primary-variant);
     margin-left: 10px ;
     padding: 8px 45px;
     color: var(--on-background);

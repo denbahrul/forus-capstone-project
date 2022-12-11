@@ -9,7 +9,6 @@ function RegisterPage() {
   function onAddUserHandler(user) {
     addUser(user);
     navigate("/login");
-    navigate(0);
   }
 
   return (
