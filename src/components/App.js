@@ -9,7 +9,6 @@ import {BottomNavbar, Navbar} from "./Navbar";
 import {LeftBar, RightBar} from "./SideBar";
 import SearchPage from "../pages/SearchPage";
 import {API} from "../utils/api";
-import NewsPage from "../pages/NewsPage";
 import TrendingPage from "../pages/TrendingPage";
 
 function App() {
