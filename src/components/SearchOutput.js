@@ -13,7 +13,6 @@ const SearchOutput = ({output}) => {
             (output[0] == 'empty') ? '' :
             output.map((item) => 
             <div className="post" key={item.id}>
-            <div className="post-avatar"></div>
             <div className="post-item">
             <Link to={`/argument/${item.id}`}><h2>{item.title}</h2></Link>
             <p className="tanggal">{item.name} • <i>{showFormattedDate(item.createdAt)}</i></p>

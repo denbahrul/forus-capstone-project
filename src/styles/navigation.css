@@ -63,8 +63,8 @@ nav {
     display: flex;
     margin: 10px 0;
     padding: 10px 0;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    /* border-top: 1px solid;
+    border-bottom: 1px solid; */
     border-color: var(--date);
   }
 
