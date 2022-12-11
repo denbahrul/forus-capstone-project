@@ -13,9 +13,6 @@ function RightBar() {
                 <BiNews size={28}/>
                 <p>Headline Indonesia</p>
               </div>
-                <div className="news">
-                  <NewsItem />
-                </div>
             </div>
         </div>
     )
