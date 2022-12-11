@@ -22,7 +22,7 @@ function BottomNavbar() {
     function logout() {  
       localStorage.removeItem('id');
       localStorage.removeItem('name');
-      navigate("/login")
+      navigate("/")
       navigate(0);
     }
     return (
