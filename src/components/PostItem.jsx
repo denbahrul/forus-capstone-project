@@ -1,8 +1,6 @@
 import React from "react";
 import { showFormattedDate } from "../utils/index";
 import { Link } from 'react-router-dom';
-
-import {AiOutlineUpCircle, AiOutlineDownCircle} from "react-icons/ai";
 import {FaRegComments} from "react-icons/fa";
 
 function PostItem({id, title, name, createdAt, kategori, argument, instansi, upVote, downVote, comment}) {

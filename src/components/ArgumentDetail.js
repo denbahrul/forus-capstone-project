@@ -1,6 +1,5 @@
 import React from "react";
 import { showFormattedDate } from "../utils";
-import {AiOutlineUpCircle, AiOutlineDownCircle} from "react-icons/ai";
 import {FaRegComments} from "react-icons/fa";
 
 function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name, upVote, downVote, comment}) {
