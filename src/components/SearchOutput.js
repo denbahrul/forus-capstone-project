@@ -10,7 +10,7 @@ const SearchOutput = ({output}) => {
         <div>
            {
             (output.length > 0) ?
-            (output[0] == 'empty') ? '' :
+            (output[0] === 'empty') ? '' :
             output.map((item) => 
             <div className="post" key={item.id}>
             <div className="post-item">
