@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { getAllTrending } from "../utils/api";
 import PostItem from "../components/PostItem";
 import Loader from "../components/loader";
-import AddButton from "../components/AddButton";
 
 function TrendingPage() {
   const [initializing, setInitializing] = useState(true);
