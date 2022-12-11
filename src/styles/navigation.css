@@ -28,6 +28,10 @@ nav {
   padding: 0 20px;
 }
 
+.logo-navbar {
+  max-height: 38px;
+}
+
 .sidebar {
     width: 25%;
     height: 70vh;

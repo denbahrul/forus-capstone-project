@@ -9,7 +9,7 @@ function Navbar({searchEventHandler, setKeyword}) {
     const name = localStorage.getItem('name')
     return (
         <nav>
-            <h1>ForUs.</h1>
+            <img src="./forus.png" alt="forus logo" className="logo-navbar"></img>
             <SearchBar searchEventHandler={searchEventHandler} setKeyword={setKeyword}  />
             {/* <div className="post-avatar"></div> */}
             <h3 className="name">{name}</h3>
