@@ -2,7 +2,7 @@ import React from "react";
 import { showFormattedDate } from "../utils";
 import {FaRegComments} from "react-icons/fa";
 
-function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name, upVote, downVote, comment}) {
+function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instansi, name, comment}) {
     return (
         <>
         <div className="detail-main">

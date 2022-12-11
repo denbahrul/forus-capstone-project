@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { useState, useEffect } from 'react'
 import { getNews } from "../utils/api";
 import Loader from "./loader";
@@ -34,3 +34,4 @@ function NewsItem() {
 }
 
 export default NewsItem;
+*/
