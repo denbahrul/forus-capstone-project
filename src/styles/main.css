@@ -44,6 +44,6 @@
     text-decoration: none;
   }
 
-  a:hover {
+  .post-title:hover {
     color: var(--primary-variant);
   }

@@ -5,10 +5,11 @@ import {FaRegComments} from "react-icons/fa";
 
 function PostItem({id, title, name, createdAt, kategori, argument, instansi, comment}) {
     return (
+      <Link to={`/argument/${id}`}>
         <div className="post">
           {/* <div className="post-avatar"></div> */}
           <div className="post-item">
-          <Link to={`/argument/${id}`}><h2>{title}</h2></Link>
+          <h2 className="post-title">{title}</h2>
           <p className="tanggal">{name} • <i>{showFormattedDate(createdAt)}</i></p>
           <div className="detail-kategori__instansi">
                 <p className="detail-kategori">{kategori}</p>
@@ -29,8 +30,9 @@ function PostItem({id, title, name, createdAt, kategori, argument, instansi, com
             <p>{comment.length} Komentar</p>
         </div>
     </div>
-          </div>
         </div>
+        </div>
+          </Link>
       )
 }
 
