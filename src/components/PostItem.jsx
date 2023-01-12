@@ -3,7 +3,7 @@ import { showFormattedDate } from "../utils/index";
 import { Link } from 'react-router-dom';
 import {FaRegComments} from "react-icons/fa";
 
-function PostItem({id, title, name, createdAt, kategori, argument, instansi, upVote, downVote, comment}) {
+function PostItem({id, title, name, createdAt, kategori, argument, instansi, comment}) {
     return (
         <div className="post">
           {/* <div className="post-avatar"></div> */}

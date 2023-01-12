@@ -9,7 +9,6 @@ import {BottomNavbar, Navbar} from "./Navbar";
 import {LeftBar, RightBar} from "./SideBar";
 import SearchPage from "../pages/SearchPage";
 import {API} from "../utils/api";
-import NewsPage from "../pages/NewsPage";
 import TrendingPage from "../pages/TrendingPage";
 
 function App() {
@@ -65,9 +64,7 @@ function App() {
           <Route path="/addArgument" element={<AddPage />} />
           <Route path="/argument/:id" element={<DetailPage />} />
           <Route path="/search" element={<SearchPage searchCategoriesEvent={searchCategoriesEvent} isLoading={isLoading} data={data} />} />
-          <Route path="/news" element={<NewsPage />} />
           <Route path="/trending" element={<TrendingPage />} />
-          
         </Routes>
         </main>
         <RightBar />

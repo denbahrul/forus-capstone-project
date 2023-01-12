@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { useState, useEffect } from 'react'
 import { getNews } from "../utils/api";
 import Loader from "./loader";
@@ -23,7 +23,7 @@ function NewsItem() {
       <>
       {news.map((news) => {
         return (
-        <div className="news-item">
+        <div className="news-item" key={news.url}>
             <a href={news.url} target="_blank" rel="noopener noreferrer"><p>{news.title}</p></a>
             <hr />
         </div>
@@ -34,3 +34,4 @@ function NewsItem() {
 }
 
 export default NewsItem;
+*/

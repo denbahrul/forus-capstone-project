@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineFire, AiOutlineHome } from "react-icons/ai";
 import {FiLogOut} from 'react-icons/fi';
-import NewsItem from "./NewsItem";
 import {BiNews} from 'react-icons/bi'
 
 function RightBar() {
@@ -13,9 +12,6 @@ function RightBar() {
                 <BiNews size={28}/>
                 <p>Headline Indonesia</p>
               </div>
-                <div className="news">
-                  <NewsItem />
-                </div>
             </div>
         </div>
     )
@@ -27,7 +23,7 @@ function LeftBar() {
   function logout() {  
     localStorage.removeItem('id');
     localStorage.removeItem('name');
-    navigate("/login")
+    navigate("/")
     navigate(0);
   }
 

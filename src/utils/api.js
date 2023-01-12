@@ -101,11 +101,10 @@ async function addArgument({ title, argument, instansi, sumber, kategori, userId
     return {data: responseJson}
   }
 
-  async function getNews() {
+ /* async function getNews() {
     const response = await fetch("https://newsapi.org/v2/top-headlines?country=id&apiKey=2fa65df819904aec82a8e8a1bb493b0c");
     const responseJson = await response.json();
 
     return {data: responseJson.articles}
-  }
-
-export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost, API, getNews, getAllTrending };
+  }  */
+export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost, API, getAllTrending };

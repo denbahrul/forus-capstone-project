@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import NewsItem from "../components/NewsItem";
 import {BiNews} from "react-icons/bi"
 
@@ -19,3 +19,4 @@ function NewsPage() {
 }
 
 export default NewsPage;
+*/
