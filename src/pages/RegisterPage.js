@@ -8,7 +8,8 @@ function RegisterPage() {
 
   function onAddUserHandler(user) {
     addUser(user);
-    navigate("/login");
+    navigate("/");
+    return alert("Pendaftaran berhasil! Login untuk melanjutkan");
   }
 
   return (
