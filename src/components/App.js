@@ -10,6 +10,7 @@ import {LeftBar, RightBar} from "./SideBar";
 import SearchPage from "../pages/SearchPage";
 import {API} from "../utils/api";
 import TrendingPage from "../pages/TrendingPage";
+import NewsPage from "../pages/NewsPage";
 
 function App() {
   const [authedUser] = useState(localStorage.getItem('id'));
@@ -65,6 +66,7 @@ function App() {
           <Route path="/argument/:id" element={<DetailPage />} />
           <Route path="/search" element={<SearchPage searchCategoriesEvent={searchCategoriesEvent} isLoading={isLoading} data={data} />} />
           <Route path="/trending" element={<TrendingPage />} />
+          <Route path="/news" element={<NewsPage />} />
         </Routes>
         </main>
         <RightBar />

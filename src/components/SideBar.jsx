@@ -3,16 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineFire, AiOutlineHome } from "react-icons/ai";
 import {FiLogOut} from 'react-icons/fi';
 import {BiNews} from 'react-icons/bi'
+import NewsItem from "../components/NewsItem";
 
 function RightBar() {
     return (
         <div className="sidebar">
-            <div className="sidebar-item">
-              <div className="sidebar-menu">
-                <BiNews size={28}/>
-                <p>Headline Indonesia</p>
-              </div>
-            </div>
+    <div className="sidebar-item">
+      <div className="sidebar-menu">
+        <BiNews size={28}/>
+        <p style={{marginLeft:`10px`}} >Headline Indonesia</p>
+      </div>
+        <div className="news">
+          <NewsItem />
+        </div>
+    </div>
         </div>
     )
 
