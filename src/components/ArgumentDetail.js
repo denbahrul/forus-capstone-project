@@ -6,7 +6,7 @@ function ArgumentDetail ( {title, createdAt, kategori, argument, sumber, instans
     return (
         <>
         <div className="detail-main">
-            <h2>{title}</h2>
+            <h2 className="detail-title">{title}</h2>
             <p className="detail-date">{name} • <i>{showFormattedDate(createdAt)}</i></p>
             <div className="detail-kategori__instansi">
                 <p className="detail-kategori">{kategori}</p>

@@ -22,6 +22,7 @@
     main {
         width: 50%;
         margin: 0;
+        padding: 0;
     }
 
     .detail-container, .input-container {
@@ -31,8 +32,6 @@
     nav {
         padding: 0 25px;
     }
-
-
  }
 
 @media (min-width: 1200px) { @content; }

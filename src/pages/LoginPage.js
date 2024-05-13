@@ -37,28 +37,26 @@ function LoginPage() {
   return (
     <div className="login-register">
       <div className="form-login">
-        <h1 className="for-us">ForUs.</h1>
-      <form onSubmit={handleLogin}>
-        <div>
-          <h2>Masuk </h2>
-        </div>
-
-        <label>Email</label>
-        <input type="email" className="form-control" placeholder="Masukan email anda" required name="email" onChange={(e) => setInput({ ...input, email: e.target.value })} />
-        <label>Password</label>
-        <input type="password" className="form-control" placeholder="Masukan password" required name="password" onChange={(e) => setInput({ ...input, password: e.target.value })} />
-
-        <div className="check-label">
-          <input type="checkbox" className="checkmark" id="exampleCheck1" />
-          <label className="check-label" htmlFor="exampleCheck1">
-            Ingat Saya
-          </label>
-        </div>
-        <button className="button-submit" type="submit">
-          Masuk
-        </button>
-        <p>Belum punya akun? <Link to="/register"><b>Daftar.</b></Link> </p>
-      </form>
+        <img src="./forus.png" alt="forus logo" className="forus-logo"></img>
+        <form onSubmit={handleLogin}>
+          <div>
+            <h2>Masuk </h2>
+          </div>
+          <label>Email</label>
+          <input type="email" className="form-control" placeholder="Masukan email anda" required name="email" onChange={(e) => setInput({ ...input, email: e.target.value })} />
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Masukan password" required name="password" onChange={(e) => setInput({ ...input, password: e.target.value })} />
+          {/* <div className="check-label">
+            <input type="checkbox" className="checkmark" id="exampleCheck1" />
+            <label className="check-label" htmlFor="exampleCheck1">
+              Ingat Saya
+            </label>
+          </div> */}
+          <button className="button-submit" type="submit">
+            Masuk
+          </button>
+          <p>Belum punya akun? <Link to="/register"><b>Daftar.</b></Link> </p>
+        </form>
       </div>
       <div className="background-login-register">
         <img src="./ilustrasi.png" alt="ilustrasi diskusi"></img>

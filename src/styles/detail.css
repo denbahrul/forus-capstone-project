@@ -22,6 +22,12 @@
     margin-bottom: 10px;
 }
 
+.detail-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
 .detail-date {
     color:var(--date);
 }
@@ -29,6 +35,9 @@
 .detail-kategori__instansi {
     display: flex;
     align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .detail-kategori {
@@ -48,10 +57,16 @@
     margin-left: 10px;
     font-size: medium;
     background-color: rgba(71, 144, 255, 0.24);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .detail-argument {
     margin: 20px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .detail-sumber  a {
@@ -120,6 +135,9 @@
 
 .comment-body {
     padding: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .comment-source {
