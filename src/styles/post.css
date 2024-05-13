@@ -1,7 +1,7 @@
 .post {
     /* display: flex; */
     background-color: white;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 1px;
     padding: 20px;
     border-radius: 10px;
@@ -40,6 +40,7 @@
   }
 
   .limit-char {
+    word-wrap: break-word;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 5;
@@ -48,6 +49,8 @@
 
   .post h2 {
     text-decoration: none;
+    overflow: hidden;
+    word-wrap: break-word;
   }
 
   .tanggal {

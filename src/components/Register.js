@@ -69,32 +69,36 @@ class Register extends React.Component {
       <>
       <div className="login-register">
       <div className="form-login">
-      <h1 className="for-us">ForUs.</h1>
+      <img src="./forus.png" alt="forus logo" className="forus-logo"></img>
       <form onSubmit={this.onSubmitEventHandler}>
-      <h2>Register</h2>
+      <h2>Daftar</h2>
         <input
           type="text"
           placeholder="Nama"
           value={this.state.name}
           onChange={this.onNameChangeEventHandler}
+          required
         />
         <input
           type="email"
           placeholder="Email"
           value={this.state.email}
           onChange={this.onEmailChangeEventHandler}
+          required
         />
         <input
           type="password"
           placeholder="Password"
           value={this.state.password}
           onChange={this.onPasswordChangeEventHandler}
+          required
         />
         <input
           type="password"
           placeholder="Konfirmasi Password"
           value={this.state.passwordConfirmation}
           onChange={this.onPasswordConfirmationChangeEventHandler}
+          required
         />
         <button className="button-submit" type="submit">Daftar</button>
         <p>Sudah punya akun? <Link to="/login"><b>Masuk.</b></Link> </p>

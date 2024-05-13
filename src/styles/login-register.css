@@ -3,6 +3,12 @@
     height: 100vh;
 }
 
+.forus-logo {
+    width: 150px;
+    padding-bottom: 80px;
+    margin: 0px auto;
+  }
+
 .form-login h1{
     text-align: center;
     font-size: 32px;
@@ -11,14 +17,15 @@
 }
 
 .form-login {
+    padding-top: 120px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(--on-background);
+    background-color: #ffffff;
 }
 
 .form-login form {
-    margin: auto;
+    margin: 0px auto;
     display: flex;
     flex-direction: column;
 }
