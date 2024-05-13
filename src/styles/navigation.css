@@ -3,7 +3,7 @@
     width: 100%;
   }
 
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +13,18 @@ nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+} */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background-color: white;
+  padding: 0 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .bottom-nav {
@@ -181,6 +193,10 @@ nav {
 
   .news::-webkit-scrollbar {
     width: 10px;
+  }
+
+  .news-date {
+    color: rgb(175, 175, 175);
   }
 
   .news-item p {

@@ -8,7 +8,7 @@ import {BiNews} from 'react-icons/bi'
 function Navbar({searchEventHandler, setKeyword}) {
     const name = localStorage.getItem('name')
     return (
-        <nav>
+        <nav className="navbar">
             <img src="./forus.png" alt="forus logo" className="logo-navbar"></img>
             <SearchBar searchEventHandler={searchEventHandler} setKeyword={setKeyword}  />
             {/* <div className="post-avatar"></div> */}
