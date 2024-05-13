@@ -1,7 +1,7 @@
 import React from "react";
 import SearchCategories from "../components/SearchCategories";
 import SearchOutput from "../components/SearchOutput";
-import Loader from "../components/loader";
+import SearchLoading from "../components/SearchLoading";
 
 function SearchPage({ searchCategoriesEvent, isLoading, data}) {
 
@@ -11,7 +11,7 @@ function SearchPage({ searchCategoriesEvent, isLoading, data}) {
        <div className="row justify-content-center">
         <div className="col-md-6">
           <SearchCategories searchCategoriesEvent={searchCategoriesEvent} />
-          {isLoading ? <Loader /> :  
+          {isLoading ? <SearchLoading /> :  
             <SearchOutput output={data} />
           }
           </div>
