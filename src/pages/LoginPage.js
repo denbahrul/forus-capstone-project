@@ -27,12 +27,10 @@ function LoginPage() {
         return alert("Login berhasil! Tekan OK untuk melanjutkan");
 
       } else if(listUser.indexOf(x) === listUser.length - 1) {
-        return alert("Email atau password Salah");
+        return alert("Email atau Password Salah");
       }
     }
   };
-  console.log(listUser);
-  console.log(input);
 
   return (
     <div className="login-register">
