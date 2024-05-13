@@ -31,8 +31,6 @@ function LoginPage() {
       }
     }
   };
-  console.log(listUser);
-  console.log(input);
 
   return (
     <div className="login-register">
