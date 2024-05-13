@@ -102,9 +102,9 @@ async function addArgument({ title, argument, instansi, sumber, kategori, userId
   }
 
  async function getNews() {
-    const response = await fetch("https://newsapi.org/v2/top-headlines?country=id&apiKey=dc5b5bcfb22742df94801aae5d3195b1");
+    const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_15563dbd009f187eddd3c97309a37c8729b47&country=id");
     const responseJson = await response.json();
 
-    return {data: responseJson.articles}
+    return {data: responseJson.results}
   }
 export { addArgument, addUser, getUser, getDetailArgument, getComment, addComment, getAllPost, getPost, API, getAllTrending, getNews };

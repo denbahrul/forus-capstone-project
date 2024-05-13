@@ -24,9 +24,10 @@ function NewsItem() {
       <>
       {news.map((news) => {
         return (
-        <div className="news-item" key={news.url}>
-            <a href={news.url} target="_blank" rel="noopener noreferrer"><p>{news.title}</p>
-            <p className="news-date">{showFormattedDate(news.publishedAt)}</p></a>
+        <div className="news-item" key={news.link}>
+            <a href={news.link} target="_blank" rel="noopener noreferrer"><p>{news.title}</p>
+            <p className="news-date">{showFormattedDate(news.pubDate)}</p>
+            </a>
             <hr />
         </div>
     )
