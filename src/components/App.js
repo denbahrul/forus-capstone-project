@@ -35,7 +35,7 @@ function App() {
         )
         .catch((err) => {
           console.log(err.message);
-          setIsLoading(false);
+          setIsLoading(true);
         });
   }
 

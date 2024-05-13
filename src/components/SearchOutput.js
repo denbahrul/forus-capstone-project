@@ -9,8 +9,8 @@ const SearchOutput = ({output}) => {
     return (
         <div>
            {
-            (output === null) ?
-            (output[0] === 'empty') ? <SearchNotFound /> :
+            (output.length > 0) ?
+            (output[0] === 'empty') ? '' :
             output.map((item) => 
             <div className="post" key={item.id}>
                 <div className="post-item">
