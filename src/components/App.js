@@ -59,15 +59,15 @@ function App() {
       <div className="wrapper">
         <LeftBar />
         <main>
-        <Routes>
-          <Route path="/*" element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/addArgument" element={<AddPage />} />
-          <Route path="/argument/:id" element={<DetailPage />} />
-          <Route path="/search" element={<SearchPage searchCategoriesEvent={searchCategoriesEvent} isLoading={isLoading} data={data} />} />
-          <Route path="/trending" element={<TrendingPage />} />
-          <Route path="/news" element={<NewsPage />} />
-        </Routes>
+          <Routes>
+            <Route path="/*" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/addArgument" element={<AddPage />} />
+            <Route path="/argument/:id" element={<DetailPage />} />
+            <Route path="/search" element={<SearchPage searchCategoriesEvent={searchCategoriesEvent} isLoading={isLoading} data={data} />} />
+            <Route path="/trending" element={<TrendingPage />} />
+            <Route path="/news" element={<NewsPage />} />
+          </Routes>
         </main>
         <RightBar />
       </div>
